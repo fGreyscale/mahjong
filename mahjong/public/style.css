@@ -1,0 +1,28 @@
+section button {
+    height: 100px;
+    width: 100px;
+    /* font-size: 70px; */
+}
+#display {
+    float: right;
+}
+#hand {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+#kastat {
+    width: 10;
+    height: 10;
+}
+#kompass{
+    float: right;
+    opacity: 0.5;
+}
+/* img{
+    width: 10;
+    height: 20;
+} */
+
+
