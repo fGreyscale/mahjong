@@ -46,7 +46,7 @@ Deno.serve((request) => {
             console.log(1 - id)
 
             if (event.data == "dra") {
-                sockets[id].send(bricks.splice(0, 1))
+                sockets[id].send(bricks.splice(0, 1)[0])
                 for (let index = 0; index < 4; index++) {
                     if(index != id){
                         sockets[index].send("drog")
