@@ -9,7 +9,7 @@ for (let index = 0; index < 4; index++) {
 
 }
 for (let i = bricks.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * i + 1);
+    const j = Math.floor(Math.random() * (i + 1));
     [bricks[i], bricks[j]] = [bricks[j], bricks[i]];
 }
 console.log(bricks, bricks.length)
@@ -46,7 +46,7 @@ Deno.serve((request) => {
             console.log(1 - id)
 
             if (event.data == "dra") {
-                sockets[id].send(bricks.splice(0, 1))
+                sockets[id].send(bricks.splice(0, 1)[0])
                 for (let index = 0; index < 4; index++) {
                     if(index != id){
                         sockets[index].send("drog")
@@ -66,7 +66,7 @@ Deno.serve((request) => {
                     if(index != id){
                         sockets[index].send(event.data)
                     } else {
-                        sockets[index].send(bricks.splice(0, 1) + event.data)
+                        sockets[index].send(bricks.splice(0, 1)[0] + event.data)
                     }
                     
                 }
